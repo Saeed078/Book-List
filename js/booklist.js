@@ -64,7 +64,7 @@ function booksGenerator(books) {
         bookList.append(newTr);
         newRimoveBtn.addEventListener("click", function(event) {
             event.target.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode);
-            localStorage.removeItem("books")
+            localStorage.removeItem("(" + books.id + ")")
         })
     })
 
@@ -77,12 +77,6 @@ function getLocalStorage() {
         booksGenerator(booksArray)
     }
 }
-
-
-rimoveBtn.addEventListener("click", function(event) {
-    event.target.parentNode.parentNode.parentNode.removeChild(event.target.parentNode.parentNode);
-    console.log(event.target)
-});
 
 window.addEventListener("load", getLocalStorage)
 
